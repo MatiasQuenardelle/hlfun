@@ -1,0 +1,7 @@
+:80 {
+    reverse_proxy quakejs:80
+
+    handle /websocket* {
+        reverse_proxy quakejs:27960
+    }
+}
