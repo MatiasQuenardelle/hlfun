@@ -13,7 +13,7 @@ services:
       - quakejs
 
   quakejs:
-    image: ghcr.io/neonwatty/quakejs-https-docker:latest
+    image: treyyoder/quakejs:latest
     restart: always
     ports:
       - "27960:27960"
