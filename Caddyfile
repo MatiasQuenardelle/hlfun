@@ -1,4 +1,4 @@
-quakefun.site {
+:80 {
     reverse_proxy quakejs:8080
 
     handle /websocket* {
