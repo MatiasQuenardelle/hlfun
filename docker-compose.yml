@@ -1,27 +1,11 @@
 services:
-  caddy:
-    image: caddy:2-alpine
-    restart: always
-    ports:
-      - "80:80"
-      - "443:443"
-    volumes:
-      - ./Caddyfile:/etc/caddy/Caddyfile
-      - caddy_data:/data
-      - caddy_config:/config
-    depends_on:
-      - quakejs
-
   quakejs:
     image: awakenedpower/quakejs-rootless:latest
     restart: always
     ports:
+      - "80:8080"
       - "27960:27960"
     volumes:
       - ./server.cfg:/quakejs/base/baseq3/server.cfg
     environment:
-      - HTTP_PORT=8080
-
-volumes:
-  caddy_data:
-  caddy_config:
+      - HTTP_PORT=80
